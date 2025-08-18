@@ -1,10 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://cjnwauxye8c7j"]
+[gd_scene load_steps=4 format=3 uid="uid://cjnwauxye8c7j"]
+
+[ext_resource type="Script" uid="uid://c0f0xthd1sg5g" path="res://Characters/Player/pc.gd" id="1_imugh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xccn0"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_imugh"]
 
 [node name="PC" type="CharacterBody2D"]
+script = ExtResource("1_imugh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_xccn0")
