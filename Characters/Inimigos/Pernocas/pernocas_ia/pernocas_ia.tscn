@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://davx7nrhiijjn"]
+
+[ext_resource type="Script" uid="uid://ufblri8qrv8p" path="res://Characters/Inimigos/Pernocas/pernocas_ia/pernocas_ia.gd" id="1_tvbkm"]
+[ext_resource type="Script" uid="uid://qw0rnt10vxoy" path="res://Characters/Inimigos/Pernocas/estados/tranquilo.gd" id="2_8cyyo"]
+[ext_resource type="Script" uid="uid://bdmyfymhxugij" path="res://Characters/Inimigos/Pernocas/estados/procurando.gd" id="3_8nib0"]
+[ext_resource type="Script" uid="uid://bm5rv4hoq1rv6" path="res://Characters/Inimigos/Pernocas/estados/indo_atras.gd" id="4_xxy1v"]
+
+[node name="pernocas-ia" type="Node"]
+script = ExtResource("1_tvbkm")
+
+[node name="tranquilo" type="Node" parent="."]
+script = ExtResource("2_8cyyo")
+
+[node name="procurando" type="Node" parent="."]
+script = ExtResource("3_8nib0")
+
+[node name="indo_atras" type="Node" parent="."]
+script = ExtResource("4_xxy1v")

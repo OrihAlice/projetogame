@@ -1,12 +1,13 @@
-[gd_scene load_steps=22 format=3 uid="uid://cjnwauxye8c7j"]
+[gd_scene load_steps=23 format=3 uid="uid://cjnwauxye8c7j"]
 
 [ext_resource type="Script" uid="uid://c0f0xthd1sg5g" path="res://Characters/Player/pc.gd" id="1_imugh"]
 [ext_resource type="Texture2D" uid="uid://bgeh4t5ivadj0" path="res://Characters/Player/Sprites/animacao_teste_de_bosta-Sheet.png" id="2_ep87d"]
 [ext_resource type="Texture2D" uid="uid://cdx2a2264lqwj" path="res://Characters/Player/Sprites/animacao_teste_correndo-Sheet.png" id="2_lcde8"]
-[ext_resource type="PackedScene" uid="uid://bahi1ftt3huef" path="res://Characters/Player/state_machine/state_machine.tscn" id="4_bbhxq"]
+[ext_resource type="Script" uid="uid://c76vmfdxoik56" path="res://Characters/Player/state_machine.gd" id="4_bbhxq"]
+[ext_resource type="Script" uid="uid://qwjctg0lle6y" path="res://Characters/Player/movimentacao.gd" id="5_cly80"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xccn0"]
-size = Vector2(20, 81)
+size = Vector2(20, 79)
 
 [sub_resource type="GDScript" id="GDScript_imugh"]
 script/source = "extends Camera2D
@@ -127,7 +128,7 @@ animations = [{
 script = ExtResource("1_imugh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 9.5)
+position = Vector2(0, 8.5)
 shape = SubResource("RectangleShape2D_xccn0")
 
 [node name="Player_camera" type="Camera2D" parent="."]
@@ -147,5 +148,8 @@ sprite_frames = SubResource("SpriteFrames_4ach2")
 animation = &"Walking"
 autoplay = "Walking"
 
-[node name="state_machine" parent="." node_paths=PackedStringArray("estado_atual") instance=ExtResource("4_bbhxq")]
-estado_atual = NodePath("parado")
+[node name="state_machine" type="Node" parent="."]
+script = ExtResource("4_bbhxq")
+
+[node name="movimentacao" type="Node" parent="state_machine"]
+script = ExtResource("5_cly80")

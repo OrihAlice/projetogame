@@ -1,0 +1,86 @@
+[gd_scene load_steps=14 format=3 uid="uid://cpnduwojpom1b"]
+
+[ext_resource type="Script" uid="uid://b4jxaa3nxefgv" path="res://Characters/Inimigos/Pernocas/pernas.gd" id="1_7unal"]
+[ext_resource type="Texture2D" uid="uid://dblq4fk3f0km7" path="res://Characters/Player/Sprites/animacao_teste_correndo-ezgif.com-gif-to-sprite-converter.png" id="2_cek2e"]
+[ext_resource type="PackedScene" uid="uid://davx7nrhiijjn" path="res://Characters/Inimigos/Pernocas/pernocas_ia/pernocas_ia.tscn" id="3_cx858"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rfey6"]
+size = Vector2(22, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0oovn"]
+atlas = ExtResource("2_cek2e")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tne07"]
+atlas = ExtResource("2_cek2e")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l5idu"]
+atlas = ExtResource("2_cek2e")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r621p"]
+atlas = ExtResource("2_cek2e")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hghtu"]
+atlas = ExtResource("2_cek2e")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xucr6"]
+atlas = ExtResource("2_cek2e")
+region = Rect2(0, 100, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_my141"]
+atlas = ExtResource("2_cek2e")
+region = Rect2(100, 100, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74hkn"]
+atlas = ExtResource("2_cek2e")
+region = Rect2(200, 100, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8vv1n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0oovn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tne07")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l5idu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r621p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hghtu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xucr6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_my141")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74hkn")
+}],
+"loop": true,
+"name": &"Running",
+"speed": 5.0
+}]
+
+[node name="pernas" type="Area2D"]
+script = ExtResource("1_7unal")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 29.5)
+shape = SubResource("RectangleShape2D_rfey6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8vv1n")
+animation = &"Running"
+frame_progress = 0.0224522
+
+[node name="pernocas-ia" parent="." instance=ExtResource("3_cx858")]
