@@ -2,7 +2,7 @@ extends Node
 
 @export
 var estado_inicial: Estado_player
-@export
+
 var estado_atual: Estado_player
 
 func init(parent: CharacterBody2D) -> void:

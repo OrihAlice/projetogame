@@ -84,3 +84,13 @@ animation = &"Running"
 frame_progress = 0.0224522
 
 [node name="pernocas-ia" parent="." instance=ExtResource("3_cx858")]
+
+[node name="Raycasts" type="Node" parent="."]
+
+[node name="RayCast2D" type="RayCast2D" parent="Raycasts"]
+position = Vector2(22, 27)
+target_position = Vector2(79, 0)
+
+[node name="RayCast2D2" type="RayCast2D" parent="Raycasts"]
+position = Vector2(-25, 27)
+target_position = Vector2(-74, 0)

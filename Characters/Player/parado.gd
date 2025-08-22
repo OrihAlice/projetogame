@@ -11,7 +11,6 @@ var correndo: Estado_player
 
 func enter() -> void:
 	super()
-	parent.animacoes.stop()
 	parent.velocity.x = 0
 
 func process_input(event: InputEvent) -> Estado_player:

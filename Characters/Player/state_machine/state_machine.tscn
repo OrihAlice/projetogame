@@ -7,17 +7,17 @@
 [ext_resource type="Script" uid="uid://c0lq5j7f7y18h" path="res://Characters/Player/state_machine/caindo.gd" id="5_p5f0e"]
 [ext_resource type="Script" uid="uid://c6wxt6qh6yvhy" path="res://Characters/Player/state_machine/correndo.gd" id="6_p5f0e"]
 
-[node name="state_machine" type="Node" node_paths=PackedStringArray("estado_inicial", "estado_atual")]
+[node name="state_machine" type="Node" node_paths=PackedStringArray("estado_inicial")]
 script = ExtResource("1_w4fov")
 estado_inicial = NodePath("caindo")
-estado_atual = NodePath("caindo")
 
-[node name="parado" type="Node" parent="." node_paths=PackedStringArray("caindo", "andando", "pulando")]
+[node name="parado" type="Node" parent="." node_paths=PackedStringArray("caindo", "andando", "pulando", "correndo")]
 script = ExtResource("3_012j0")
 caindo = NodePath("../caindo")
 andando = NodePath("../andando")
 pulando = NodePath("../pulando")
-animation_name = "Walking"
+correndo = NodePath("../correndo")
+animation_name = "Parado"
 
 [node name="pulando" type="Node" parent="." node_paths=PackedStringArray("caindo", "parado", "andando", "correndo")]
 script = ExtResource("4_012j0")
